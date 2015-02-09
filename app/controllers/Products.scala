@@ -6,6 +6,7 @@ import play.api.data.Form
 import play.api.data.Forms.{mapping,longNumber,nonEmptyText}
 import play.api.i18n.Messages
 
+
 /**
  * Created by finner on 18/01/2015.
  */
@@ -21,7 +22,7 @@ object Products extends Controller {
 
 
   def list = Action { implicit request =>
-    val products = Product.findAll
+    val products = Product.getAll
 
     Ok(views.html.products.list(products))
 
